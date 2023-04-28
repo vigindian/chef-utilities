@@ -9,13 +9,16 @@
 ### Usage
 ```
 $ ./chefGetNodes.py -h
-usage: chefGetNodes.py [-h] -u USER -k KEY -e ENV [-n NODE]
+usage: chefGetNodes.py [-h] -u USER -k KEY -e ENV -s URL [-v VERSION] [-n NODE]
 
 optional arguments:
   -h, --help            show this help message and exit
   -u USER, --user USER  Specify the chef-username
   -k KEY, --key KEY     Specify the chef private-key full-path. Eg: /home/johndoe/.chef/jdoe.pem
   -e ENV, --env ENV     Specify environment name
+  -s URL, --url URL     Specify chef-server URL. Eg: https://chef.example.com
+  -v VERSION, --version VERSION
+                        Specify chef-server version. Eg: 12.18.14
   -n NODE, --node NODE  Specify node name
 ```
 

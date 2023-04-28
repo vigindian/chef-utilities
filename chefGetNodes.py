@@ -72,10 +72,6 @@ def pure_sign(message, priv_key):
 # MAIN
 ########
 
-#Chef attributes
-url="https://chef.example.com"
-chefversion = "12.18.14"
-
 #api-request: other prereqs
 timeout=3
 body = ""
@@ -108,6 +104,22 @@ parser.add_argument(
         help = "Specify environment name")
 
 parser.add_argument(
+        "-s",
+        "--url",
+        required = True,
+        default = None,
+        type = str,
+        help = "Specify chef-server URL. Eg: https://chef.example.com")
+
+parser.add_argument(
+        "-v",
+        "--version",
+        #required = True,
+        default = "12.18.14",
+        type = str,
+        help = "Specify chef-server version. Eg: 12.18.14")
+
+parser.add_argument(
         "-n",
         "--node",
         default = None,
@@ -120,6 +132,8 @@ environment = options.env
 client_name = options.user
 client_key = options.key
 node = options.node
+url = options.url
+chefversion = options.version
 
 if not node:
   path = "/organizations/"+environment+"/nodes"
