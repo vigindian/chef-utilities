@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-#########################
-# Chef Server API
+####################################
+# Chef Server API: Get node details
 # 
 # VN 
-#########################
+####################################
 
 #prereq modules
 import base64
